@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   def save_name
     current_user.name = params[:name]
     current_user.save!
-    redirect_to root
+    redirect_to root_path
   end
 end
