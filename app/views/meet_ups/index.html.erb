@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Time</th>
+  </tr>
+  <% @meetups.each do |meetup| %> 
+      <tr>
+        <td><%= meetup.location %></td>
+        <td><%= meetup.time %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= form_tag(meet_ups_path, method: "post") do %>
+  <%= label_tag(:new_meetup, "Create new meetup:") %>
+  <%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm") %>
+  <%= select_tag :location, options_for_select(@locations.collect{ |l| l }) %> 
+  <%= submit_tag("Create") %>
+<% end %>
