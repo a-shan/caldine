@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+["Cafe 3", "Crossroads", "Clark Kerr Campus", "Foothill"].each do |common|
+    Location.create name: common, value: common
+end

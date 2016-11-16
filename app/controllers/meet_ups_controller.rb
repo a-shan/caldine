@@ -2,7 +2,13 @@ class MeetUpsController < ApplicationController
     def index
         @curr_user = current_user
         @meetups = MeetUp.all 
-        @locations = [["Cafe 3", "Cafe 3"], ["Crossroads", "Crossroads"]]
+        @locations = Location.all
+        @all_locations = []
+        @locations.each do |loc|
+            place = loc.name
+            val = loc.value
+            @all_locations.push([place, val])
+        end
     end
     
     def create 
