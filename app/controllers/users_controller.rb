@@ -3,9 +3,8 @@ class UsersController < ApplicationController
     @person = current_user
   end
   
-  def save_name
-    current_user.name = params[:name]
-    current_user.save!
-    redirect_to root_path
+  def index
+    @current_user = current_user
+    @users = User.all
   end
 end
