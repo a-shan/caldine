@@ -1,22 +1,17 @@
-<h1>Welcome <%= @current_user.first_name %>!</h1>
-
-<% @users.each do |user| %>
-    <h1><%= user.first_name %></h1>
-<% end %>
-
-
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-  </tr>
-  <% @users.each do |user| %> 
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-      </tr>
-  <% end %>
-</table>
-
-
-
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to user.first_name, user %></td>
+              <td><%= user.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

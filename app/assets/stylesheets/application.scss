@@ -16,5 +16,11 @@
  @import 'bootstrap';
  @import 'devise_bootstrap_views';
  
+table {
+  border-collapse: separate;
+  border-spacing: 25px 0;
+}
 
-
+th {
+  padding: 10px 0;
+}

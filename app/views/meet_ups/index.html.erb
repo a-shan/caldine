@@ -1,21 +1,37 @@
-<table id="meet_ups_table">
-  <tr>
-    <th>Location</th>
-    <th>Time</th>
-  </tr>
-  <% @meetups.each do |meetup| %> 
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+      <h4 style="text-align:left;"> Welcome to Caldine!
+      <% if user_signed_in? %>
+        <span style="float:right;">
+          <p> 
+            <%= link_to('Users', users_path) %>
+          </p> 
+        </span>
+        <p> <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %> </p>      
+      <% end %>
+      </h4>
+  </div>
+  <div class="panel-body">
+    <table>
       <tr>
-        <td><%= meetup.location %></td>
-        <td><%= meetup.time %></td>
+        <th>Location</th>
+        <th>Time</th>
       </tr>
-  <% end %>
-</table>
+      <% @meetups.each do |meetup| %> 
+          <tr>
+            <td><%= meetup.location %></td>
+            <td><%= meetup.time %></td>
+          </tr>
+      <% end %>
+    </table>
 
-<br/>
+    <br/>
 
-<%= form_tag(meet_ups_path, method: "post") do %>
-  <%= label_tag(:new_meetup, "Create new meetup:") %>
-  <%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm") %>
-  <%= select_tag :location, options_for_select(@all_locations.collect{ |l| l }) %> 
-  <%= submit_tag("Create") %>
-<% end %>
+    <%= form_tag(meet_ups_path, method: "post") do %>
+      <%= label_tag(:new_meetup, "Create new meetup:") %>
+      <%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)") %>
+      <%= select_tag :location, options_for_select(@locations.collect{ |l| l }) %> 
+      <%= submit_tag("Create") %>
+    <% end %>
+    </div>
+</div>
