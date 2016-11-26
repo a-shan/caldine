@@ -29,7 +29,7 @@
 
     <%= form_tag(meet_ups_path, method: "post") do %>
       <%= label_tag(:new_meetup, "Create new meetup:") %>
-      <%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)") %>
+      <%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)", :required => true) %>
       <%= select_tag :location, options_for_select(@all_locations.collect{ |l| l }) %> 
       <%= submit_tag("Create") %>
     <% end %>
