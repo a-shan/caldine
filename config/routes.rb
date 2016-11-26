@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'meet_ups#index'
   resources :meet_ups, :users
+  
+  post 'meet_ups/join' => 'meet_ups#join'
+  post 'meet_ups/remove' => 'meet_ups#remove'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
