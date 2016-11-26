@@ -1,5 +1,6 @@
 class ChangeTimeFormatInMeetUps < ActiveRecord::Migration
   def change
-    change_column :meet_ups, :time, :datetime
+    remove_column :meet_ups, :time
+    add_column :meet_ups, :time, :datetime
   end
 end
