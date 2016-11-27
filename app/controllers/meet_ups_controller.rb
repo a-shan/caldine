@@ -13,7 +13,7 @@ class MeetUpsController < ApplicationController
     
     def create 
         @meet_up_time = DateTime.new(*params[:meet_up_time].values.map(&:to_i))
-        if @meet_up_time < Time.now
+        if @meet_up_time < Time.zone.now
             flash[:notice] = "Cannot create meet up in the past."
             redirect_to meet_ups_path
             return
