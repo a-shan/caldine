@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 20161126211031) do
   end
 
   create_table "meet_ups", force: :cascade do |t|
-    t.datetime "time"
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "host"
     t.integer  "group_id"
+    t.datetime "time"
   end
 
   add_index "meet_ups", ["group_id"], name: "meet_up_group_id"
