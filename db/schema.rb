@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116003819) do
+ActiveRecord::Schema.define(version: 20161126211031) do
+
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "meet_up_id"
+    t.integer  "user_id"
+  end
+
+  add_index "groups", ["meet_up_id"], name: "group_meet_up_id"
+  add_index "groups", ["user_id"], name: "group_user_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -21,11 +31,15 @@ ActiveRecord::Schema.define(version: 20161116003819) do
   end
 
   create_table "meet_ups", force: :cascade do |t|
-    t.string   "time"
+    t.datetime "time"
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "host"
+    t.integer  "group_id"
   end
+
+  add_index "meet_ups", ["group_id"], name: "meet_up_group_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,9 +56,11 @@ ActiveRecord::Schema.define(version: 20161116003819) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["group_id"], name: "user_group_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

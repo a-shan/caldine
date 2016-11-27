@@ -16,12 +16,35 @@
       <tr>
         <th>Location</th>
         <th>Time</th>
+        <th>Attendants</th>
       </tr>
       <% @meetups.each do |meetup| %> 
+        <% if meetup.time > Time.now %>
           <tr>
             <td><%= meetup.location %></td>
-            <td><%= meetup.time %></td>
+            <!--<td><%= meetup.time %></td>-->
+            <td><%= meetup.time.strftime('%A, %b. %d, %l:%M %p')%></td>
+            <td><% meetup.users.each do |u|%>
+                  <%= u.first_name%>
+                  <br/>
+                  <% end %>
+            </td>
+            <td> <% if ! meetup.users.include? current_user %>
+                  <%= form_tag('meet_ups/join', method: "post") do %>
+                    <%= submit_tag("Join") %>
+                    <%= hidden_field_tag(:join_meetup, meetup.id) %>
+                  <% end %>
+                <% end %>
+            </td>
+            <% if meetup.users.include? current_user %>
+              <td> <%= form_tag('meet_ups/remove', method: "post") do %>
+                  <%= submit_tag("Remove Me") %>
+                  <%= hidden_field_tag(:remove_meetup, meetup.id) %>
+                <% end %>
+              </td>
+            <% end %> 
           </tr>
+        <% end %>
       <% end %>
     </table>
 
@@ -29,8 +52,9 @@
 
     <%= form_tag(meet_ups_path, method: "post") do %>
       <%= label_tag(:new_meetup, "Create new meetup:") %>
-      <%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)", :required => true) %>
+      <!--<%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)", :required => true ) %>-->
       <%= select_tag :location, options_for_select(@all_locations.collect{ |l| l }) %> 
+      <%= datetime_select("meet_up_time", "temp") %>
       <%= submit_tag("Create") %>
     <% end %>
     </div>
