@@ -1,4 +1,5 @@
 <h3>User</h3>
 <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
 <p>Email: <%= @user.email %></p>
-<%= link_to "Delete Account", @post, :method => :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+<%= link_to "Go Back", users_path %>
+<%= link_to "Delete Account", @user, :method => :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
