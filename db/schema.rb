@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128012210) do
+ActiveRecord::Schema.define(version: 20161128052917) do
 
   create_table "groups", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20161128012210) do
     t.integer  "host"
     t.integer  "group_id"
     t.datetime "time"
+    t.string   "comment"
   end
 
   add_index "meet_ups", ["group_id"], name: "meet_up_group_id"

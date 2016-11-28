@@ -7,17 +7,17 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<div class="panel-heading">
-      <h4 style="text-align:left;"> Welcome to Caldine!
+      <h4 style="text-align:left;"> <%= link_to('Caldine', meet_ups_path) %>
       <% if user_signed_in? %>
         <span style="float:right;">
-          <p> 
-            <%= link_to('My Profile', users_path) %>
-          </p> 
-          <p> 
+          <p>
+            <span class="nav_link"><%= link_to('My Profile', users_path) %></span>
             <%= link_to('Locations', locations_path) %>
           </p>
+            <p class="nav_line"><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></p>
         </span>
-        <p> <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %> </p>      
+        <p> 
+        </p>      
       <% end %>
       </h4>
   </div>

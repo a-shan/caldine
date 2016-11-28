@@ -5,6 +5,7 @@
         <th>Location</th>
         <th>Time</th>
         <th>Attendants</th>
+        <th>Comments</th>
       </tr>
       <% @meetups.each do |meetup| %> 
         <% if meetup.time > Time.now %>
@@ -13,10 +14,11 @@
             <!--<td><%= meetup.time %></td>-->
             <td><%= meetup.time.strftime('%A, %b. %d, %l:%M %p')%></td>
             <td><% meetup.users.each do |u|%>
-                  <%= u.first_name%>
+                  <%= link_to u.first_name, u %>
                   <br/>
-                  <% end %>
+                <% end %>
             </td>
+            <td><%= meetup.comment %></td>
             <td> <% if ! meetup.users.include? current_user %>
                   <%= form_tag('meet_ups/join', method: "post") do %>
                     <%= submit_tag("Join") %>
@@ -37,12 +39,13 @@
     </table>
 
     <br/>
-
+    <!-- TODO: Make this form prettier -->
     <%= form_tag(meet_ups_path, method: "post") do %>
       <%= label_tag(:new_meetup, "Create new meetup:") %>
       <!--<%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)", :required => true ) %>-->
       <%= select_tag :location, options_for_select(@all_locations.collect{ |l| l }) %> 
       <%= datetime_select("meet_up_time", "temp") %>
+      <%= text_field_tag(:comment, nil, placeholder: "Add a comment about the meet up", :required => false, :class => "comment_field") %>
       <%= submit_tag("Create") %>
     <% end %>
     </div>
