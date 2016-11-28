@@ -23,7 +23,7 @@ class MeetUpsController < ApplicationController
             return
         end
         # meetup = MeetUp.create(:time => params[:time], :location => params[:location], :host => current_user.id)
-        meetup = MeetUp.create(:time => @meet_up_time, :location => params[:location], :host => current_user.id)
+        meetup = MeetUp.create(:time => @meet_up_time, :location => params[:location], :host => current_user.id, :comment => params[:comment])
 
         meetup.users << current_user
         meetup.save
