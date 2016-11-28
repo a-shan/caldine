@@ -17,12 +17,22 @@
  @import 'devise_bootstrap_views';
  
 table {
-  border-collapse: separate;
-  border-spacing: 25px 0;
+    margin-top: 25px;
+    border-collapse: separate;
+    border-spacing: 25px 0;
 }
 
 th {
-  padding: 10px 0;
+    padding: 10px 0;
+}
+
+.meetup_form {
+    margin-top: 4%;
+    margin-left: 25px;
+}
+
+.panel-default {
+    margin-top: 20px;
 }
 
 .comment_field {
