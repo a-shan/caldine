@@ -14,9 +14,9 @@
             <!--<td><%= meetup.time %></td>-->
             <td><%= meetup.time.strftime('%A, %b. %d, %l:%M %p')%></td>
             <td><% meetup.users.each do |u|%>
-                  <%= u.first_name%>
+                  <%= link_to u.first_name, u %>
                   <br/>
-                  <% end %>
+                <% end %>
             </td>
             <td><%= meetup.comment %></td>
             <td> <% if ! meetup.users.include? current_user %>
