@@ -1,4 +1,10 @@
-<h3><%= @location.name%></h3>
-    <p><%= link_to "Menu", @location.menu %></p>
-    
-    <p>Address: <%= @location.address %></p>
+<div class="panel panel-default devise-bs">
+	<div class="panel-body">
+        <h3><%= @location.name%></h3>
+            <p><%= link_to "Menu", @location.menu %></p>
+            <p>Address: <%= @location.address %></p>
+            <p><%= image_tag(@location.picture) %></p>
+            <br />
+            <%= link_to "Go Back", locations_path %>
+	</div>
+</div>
