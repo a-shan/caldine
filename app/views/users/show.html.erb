@@ -1,6 +1,7 @@
 <div class="panel panel-default devise-bs">
 	<div class="panel-body">
 	    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+	    <%= image_tag(@user.avatar_url, :class => "profile_pic") if @user.avatar? %>
         <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
         <p>Email: <%= @user.email %></p>
         <p>Phone: <%= @user.phone_number %></p>
