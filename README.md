@@ -41,7 +41,9 @@ An application where users can create or join meetups to schedule times to eat w
 - Users can create a meetup, specifying location, time, and description of the meetup
 - Users can join an existing meetup
 - Users can remove themselves from a meetup
+- MeetUps table is automatically sorted by time
 - If a user is the only user in a meetup and the user removes him/herself from the meetup, the meetup is automatically removed from the index_users_on_email
+- MeetUps in the past are automatically removed from the table
 - User cannot add a meetup where the time is in the past
 - Users can view the other attendant's profiles
 
