@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :groups
   has_many :meet_ups, :through => :groups
+  mount_uploader :avatar, AvatarUploader
 end

@@ -3,6 +3,7 @@
 	<head>
 	  <title>Caldine</title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
 	</head>
@@ -12,9 +13,9 @@
         <span style="float:right;margin-right:20px;">
           <p>
             <span class="nav_link"><%= link_to('My Profile', users_path) %></span>
-            <%= link_to('Locations', locations_path) %>
+            <span class="nav_link"><%= link_to('Locations', locations_path) %></span>
+            <span class="nav_link"><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></span>
           </p>
-            <p class="nav_line"><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></p>
         </span>
         <p> 
         </p>      
