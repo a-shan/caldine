@@ -15,7 +15,17 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
  @import 'devise_bootstrap_views';
+ @import "material";
  
+ // Font
+ @import url('https://fonts.googleapis.com/css?family=Raleway');
+ 
+ $raleway: 'Raleway', sans-serif;
+ 
+ body {
+     font-family: $raleway;
+     font-size: 1.125rem;
+ }
 table {
     margin-top: 25px;
     border-collapse: separate;
@@ -38,7 +48,7 @@ th {
 .comment_field {
     // margin-left: 8px;
     width: 20%;
-    height: 50px;
+    // height: 50px;
 }
 
 .nav_line{
@@ -47,4 +57,15 @@ th {
 
 .nav_link {
     margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.parent {
+    text-align: center;
+}
+
+.container {
+    width: 400px;
+    display: inline-block;
+    text-align: left;
 }
