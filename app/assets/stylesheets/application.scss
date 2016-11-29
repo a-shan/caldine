@@ -71,9 +71,14 @@ th {
 }
 
 .photo {
-    text-align: center; /*for centering images inside*/
+    text-align: center;
 }
+
 .photo img {
-    width: 300px; /*set the width or max-width*/
-    height: auto; /*this makes sure to maintain the aspect ratio*/
+    width: 300px;
+    height: auto;
+}
+
+.adjust {
+    margin-left: 25px;
 }
