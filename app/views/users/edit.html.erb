@@ -3,7 +3,6 @@
 		<div class="panel-body edit_profile">
 			<h3>Edit <%= @user.first_name %>'s Profile</h3>
 		    <%= form_tag(user_path, method: "put", :multipart => true) do %>
-		      <%= label_tag(:edit_profile, "Edit Profile:") %><br />
 		      <!--<%= text_field_tag(:time, nil, placeholder: "Time (00:00 am/pm)", :required => true ) %>-->
 		      <%= label_tag("Name") %>
 		      <%= text_field_tag(:first_name, @user.first_name, placeholder: "First name", :required => true) %>
@@ -15,10 +14,13 @@
 		      <%= label_tag("About") %><br />
 		      <%= text_area_tag(:description, @user.description, placeholder: "Put a blurb about yourself!", :required => false, :class => "about_field") %><br />
 			  <%= label_tag("Upload image") %>
-		      <%= file_field_tag(:avatar) %>
+		      <%= file_field_tag(:avatar, :class => "file_upload") %>
 		      <%= hidden_field_tag(:avatar_cache) %>
+		      <br />
 		      <%= submit_tag("Update", :class => "submit") %>
 		    <% end %>
+		    
+		    <div style="display:block;height:50px"></div>
 			<%= link_to "Delete Account", @user, :method => :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
 		</div>
 	</div>
