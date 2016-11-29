@@ -32,6 +32,9 @@ table {
     border-spacing: 25px 0;
 }
 
+a {
+    color: #3594D8;
+}
 th {
     padding: 10px 0;
 }
@@ -119,4 +122,9 @@ input[type=file] {
 .photo img {
     width: 300px; /*set the width or max-width*/
     height: auto; /*this makes sure to maintain the aspect ratio*/
+}
+
+.notice {
+    color: #d50000;
+    margin-left: 40px;
 }
