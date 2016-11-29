@@ -36,6 +36,16 @@ th {
     padding: 10px 0;
 }
 
+.profile_pic {
+    height: 250px;
+    width: 250px;
+    border-radius: 60%;
+    -webkit-border-radius: 60%;
+    -moz-border-radius: 60%;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
 .meetup_form {
     margin-top: 4%;
     margin-left: 25px;
@@ -51,6 +61,10 @@ th {
     // height: 50px;
 }
 
+input[type=file] {
+    // margin: 0 auto;
+}
+
 .nav_line{
     float:right;
 }
@@ -60,6 +74,15 @@ th {
     font-size: 1.5rem;
 }
 
+.about_field{
+    width: 87%;
+    height: 80px;
+    padding-left:0;
+    padding-top:0;
+    padding-bottom:0.4em;
+    padding-right: 0.4em;
+}
+
 .parent {
     text-align: center;
 }
@@ -67,5 +90,22 @@ th {
 .container {
     width: 400px;
     display: inline-block;
+    text-align: center;
+}
+
+.edit_profile{
+    width: 500px;
+    display: inline-block;
     text-align: left;
+}
+
+.edit_profile input{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.submit{
+    display: block;
+    margin-left: auto;
+    margin-right: 50%;
 }
