@@ -116,7 +116,7 @@ input[type=file] {
 }
 
 .photo {
-    text-align: center; /*for centering images inside*/
+    text-align: center;
 }
 
 .photo img {
@@ -128,3 +128,8 @@ input[type=file] {
     color: #d50000;
     margin-left: 40px;
 }
+
+.adjust {
+    margin-left: 25px;
+}
+
