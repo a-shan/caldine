@@ -1,9 +1,10 @@
+<div align ="center">
 <div class="container">
   <div class="row">
-    <h3>Locations</h3>
+    <h3 align="center">Locations</h3>
     <div class="column">
       <table class="table">
-        <tbody>
+        <tbody align ="center">
           <% @locations.each do |loc| %>
             <tr>
               <td><%= link_to loc.name, location_path(loc) %></td>
@@ -13,4 +14,5 @@
       </table>
     </div>
   </div>
+</div>
 </div>

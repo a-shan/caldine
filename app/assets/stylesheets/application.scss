@@ -69,3 +69,11 @@ th {
     display: inline-block;
     text-align: left;
 }
+
+.photo {
+    text-align: center; /*for centering images inside*/
+}
+.photo img {
+    width: 300px; /*set the width or max-width*/
+    height: auto; /*this makes sure to maintain the aspect ratio*/
+}
